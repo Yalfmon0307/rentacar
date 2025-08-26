@@ -1,0 +1,432 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import heroImage from '../assets/hero-cars-nicaragua.jpg';
+import carSuv from '../assets/car-suv.jpg';
+import carSedan from '../assets/car-sedan.jpg';
+import carPickup from '../assets/car-pickup.jpg';
+
+const Index = () => {
+  const navigate = useNavigate();
+
+  const cars = [
+    {
+      id: 1,
+      name: 'SUV Compacta',
+      image: carSuv,
+      price: 45,
+      features: ['5 Pasajeros', 'Aire Acondicionado', 'Automático', 'GPS'],
+      fuel: 'Gasolina',
+      transmission: 'Automático'
+    },
+    {
+      id: 2,
+      name: 'Sedán Ejecutivo',
+      image: carSedan,
+      price: 65,
+      features: ['5 Pasajeros', 'Aire Acondicionado', 'Automático', 'GPS', 'Asientos de Cuero'],
+      fuel: 'Gasolina',
+      transmission: 'Automático'
+    },
+    {
+      id: 3,
+      name: 'Pickup 4x4',
+      image: carPickup,
+      price: 75,
+      features: ['5 Pasajeros', 'Aire Acondicionado', '4x4', 'Caja de Carga'],
+      fuel: 'Gasolina',
+      transmission: 'Manual/Automático'
+    }
+  ];
+
+  return (
+    <div style={{
+      backgroundColor: '#0f172a',
+      color: '#f1f5f9',
+      minHeight: '100vh',
+      fontFamily: 'system-ui, sans-serif'
+    }}>
+      {/* Header */}
+      <header style={{
+        padding: '1rem 2rem',
+        borderBottom: '1px solid #334155',
+        background: 'rgba(15, 23, 42, 0.95)',
+        backdropFilter: 'blur(10px)',
+        position: 'sticky',
+        top: 0,
+        zIndex: 50
+      }}>
+        <nav style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          maxWidth: '1200px',
+          margin: '0 auto'
+        }}>
+          <h1 style={{
+            fontSize: '1.5rem',
+            fontWeight: 'bold',
+            color: '#3b82f6'
+          }}>
+            🚗 RentCar Nicaragua
+          </h1>
+          <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+            <a href="#autos" style={{
+              color: '#cbd5e1',
+              textDecoration: 'none',
+              transition: 'color 0.3s'
+            }}>Autos</a>
+            <a href="#servicios" style={{
+              color: '#cbd5e1',
+              textDecoration: 'none',
+              transition: 'color 0.3s'
+            }}>Servicios</a>
+            <a href="#contacto" style={{
+              color: '#cbd5e1',
+              textDecoration: 'none',
+              transition: 'color 0.3s'
+            }}>Contacto</a>
+            <button style={{
+              backgroundColor: '#3b82f6',
+              color: 'white',
+              padding: '0.5rem 1rem',
+              border: 'none',
+              borderRadius: '0.5rem',
+              cursor: 'pointer',
+              fontWeight: '500',
+              transition: 'background-color 0.3s'
+            }}>
+              Reservar Ahora
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '90vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center'
+      }}>
+        <div style={{
+          maxWidth: '800px',
+          padding: '2rem'
+        }}>
+          <h2 style={{
+            fontSize: '4rem',
+            fontWeight: 'bold',
+            marginBottom: '1rem',
+            background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}>
+            Alquiler de Autos en Nicaragua
+          </h2>
+          <p style={{
+            fontSize: '1.25rem',
+            marginBottom: '2rem',
+            color: '#e2e8f0'
+          }}>
+            Explora Nicaragua con nuestros vehículos de última generación. 
+            Desde Managua hasta Granada, llevamos la aventura contigo.
+          </p>
+          <button style={{
+            backgroundColor: '#3b82f6',
+            color: 'white',
+            padding: '1rem 2rem',
+            border: 'none',
+            borderRadius: '0.5rem',
+            fontSize: '1.125rem',
+            fontWeight: '600',
+            cursor: 'pointer',
+            transition: 'all 0.3s',
+            boxShadow: '0 10px 25px rgba(59, 130, 246, 0.3)'
+          }}>
+            Ver Disponibilidad
+          </button>
+        </div>
+      </section>
+
+      {/* Servicios */}
+      <section id="servicios" style={{
+        padding: '4rem 2rem',
+        backgroundColor: '#1e293b'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h3 style={{
+            fontSize: '2.5rem',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            marginBottom: '3rem',
+            color: '#f1f5f9'
+          }}>
+            Nuestros Servicios
+          </h3>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '2rem'
+          }}>
+            {[
+              {
+                title: '🛡️ Seguro Completo',
+                description: 'Cobertura total incluida en todos nuestros vehículos'
+              },
+              {
+                title: '🕒 Disponible 24/7',
+                description: 'Servicio de entrega y recogida las 24 horas del día'
+              },
+              {
+                title: '🗺️ GPS Incluido',
+                description: 'Sistema de navegación GPS en todos los vehículos'
+              },
+              {
+                title: '🚗 Vehículos Nuevos',
+                description: 'Flota renovada con autos modelo 2023-2024'
+              }
+            ].map((service, index) => (
+              <div key={index} style={{
+                padding: '2rem',
+                backgroundColor: '#334155',
+                borderRadius: '1rem',
+                textAlign: 'center',
+                transition: 'transform 0.3s',
+                cursor: 'pointer'
+              }}>
+                <h4 style={{
+                  fontSize: '1.5rem',
+                  marginBottom: '1rem',
+                  color: '#3b82f6'
+                }}>
+                  {service.title}
+                </h4>
+                <p style={{
+                  color: '#cbd5e1',
+                  lineHeight: '1.6'
+                }}>
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Catálogo de Autos */}
+      <section id="autos" style={{
+        padding: '4rem 2rem',
+        backgroundColor: '#0f172a'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h3 style={{
+            fontSize: '2.5rem',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            marginBottom: '3rem',
+            color: '#f1f5f9'
+          }}>
+            Nuestra Flota
+          </h3>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+            gap: '2rem'
+          }}>
+            {cars.map((car) => (
+              <div key={car.id} style={{
+                backgroundColor: '#1e293b',
+                borderRadius: '1rem',
+                overflow: 'hidden',
+                transition: 'transform 0.3s, box-shadow 0.3s'
+              }}>
+                <img 
+                  src={car.image} 
+                  alt={car.name}
+                  style={{
+                    width: '100%',
+                    height: '250px',
+                    objectFit: 'cover'
+                  }}
+                />
+                <div style={{ padding: '1.5rem' }}>
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    marginBottom: '1rem'
+                  }}>
+                    <h4 style={{
+                      fontSize: '1.25rem',
+                      fontWeight: 'bold',
+                      color: '#f1f5f9'
+                    }}>
+                      {car.name}
+                    </h4>
+                    <span style={{
+                      fontSize: '1.5rem',
+                      fontWeight: 'bold',
+                      color: '#3b82f6'
+                    }}>
+                      ${car.price}/día
+                    </span>
+                  </div>
+                  <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '0.5rem',
+                    marginBottom: '1rem'
+                  }}>
+                    {car.features.map((feature, index) => (
+                      <span key={index} style={{
+                        backgroundColor: '#334155',
+                        color: '#cbd5e1',
+                        padding: '0.25rem 0.5rem',
+                        borderRadius: '0.25rem',
+                        fontSize: '0.875rem'
+                      }}>
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    fontSize: '0.875rem',
+                    color: '#94a3b8',
+                    marginBottom: '1rem'
+                  }}>
+                    <span>Combustible: {car.fuel}</span>
+                    <span>Transmisión: {car.transmission}</span>
+                  </div>
+                  <button 
+                    onClick={() => navigate('/alquilar', { state: { car } })}
+                    style={{
+                    width: '100%',
+                    backgroundColor: '#3b82f6',
+                    color: 'white',
+                    padding: '0.75rem',
+                    border: 'none',
+                    borderRadius: '0.5rem',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'background-color 0.3s'
+                  }}>
+                    Alquilar
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contacto */}
+      <section id="contacto" style={{
+        padding: '4rem 2rem',
+        backgroundColor: '#1e293b'
+      }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+          <h3 style={{
+            fontSize: '2.5rem',
+            fontWeight: 'bold',
+            marginBottom: '2rem',
+            color: '#f1f5f9'
+          }}>
+            Contáctanos
+          </h3>
+          <p style={{
+            fontSize: '1.125rem',
+            marginBottom: '2rem',
+            color: '#cbd5e1'
+          }}>
+            ¿Listo para tu próxima aventura? Estamos aquí para ayudarte.
+          </p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '2rem',
+            marginBottom: '3rem'
+          }}>
+            <div style={{
+              padding: '1.5rem',
+              backgroundColor: '#334155',
+              borderRadius: '1rem'
+            }}>
+              <h4 style={{
+                fontSize: '1.25rem',
+                marginBottom: '0.5rem',
+                color: '#3b82f6'
+              }}>
+                📞 Teléfono
+              </h4>
+              <p style={{ color: '#cbd5e1' }}>+505 2222-3333</p>
+            </div>
+            <div style={{
+              padding: '1.5rem',
+              backgroundColor: '#334155',
+              borderRadius: '1rem'
+            }}>
+              <h4 style={{
+                fontSize: '1.25rem',
+                marginBottom: '0.5rem',
+                color: '#3b82f6'
+              }}>
+                📧 Email
+              </h4>
+              <p style={{ color: '#cbd5e1' }}>info@rentcarnicaragua.com</p>
+            </div>
+            <div style={{
+              padding: '1.5rem',
+              backgroundColor: '#334155',
+              borderRadius: '1rem'
+            }}>
+              <h4 style={{
+                fontSize: '1.25rem',
+                marginBottom: '0.5rem',
+                color: '#3b82f6'
+              }}>
+                📍 Ubicación
+              </h4>
+              <p style={{ color: '#cbd5e1' }}>Managua, Nicaragua</p>
+            </div>
+          </div>
+          <button style={{
+            backgroundColor: '#10b981',
+            color: 'white',
+            padding: '1rem 2rem',
+            border: 'none',
+            borderRadius: '0.5rem',
+            fontSize: '1.125rem',
+            fontWeight: '600',
+            cursor: 'pointer',
+            transition: 'background-color 0.3s'
+          }}>
+            Iniciar Reserva
+          </button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer style={{
+        padding: '2rem',
+        backgroundColor: '#0f172a',
+        borderTop: '1px solid #334155',
+        textAlign: 'center'
+      }}>
+        <p style={{
+          color: '#64748b',
+          fontSize: '0.875rem'
+        }}>
+          © 2024 RentCar Nicaragua. Todos los derechos reservados.
+        </p>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
