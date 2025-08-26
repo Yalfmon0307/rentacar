@@ -163,11 +163,27 @@ const Index = () => {
             {[
               {
                 title: '🛡️ Seguro full cover',
-                description: 'seguro full cover en todos nuestros vehículos'
+                description: 'Seguro full cover en todos nuestros vehículos.'
               },
               {
                 title: '🕒 Disponible 24/7',
-                description: 'Servicio de entrega y recogida las 24 horas del día'
+                description: 'Servicio de entrega y recogida las 24 horas del día.'
+              },
+              {
+                title: '✈️ Entrega en aeropuerto',
+                description: 'Recibe tu auto directamente en el Aeropuerto Internacional de Managua.'
+              },
+              {
+                title: '🚨 Asistencia en carretera',
+                description: 'Soporte y ayuda en caso de emergencias durante tu alquiler.'
+              },
+              {
+                title: '💸 Descuento por varios días',
+                description: 'Obtén tarifas especiales y descuentos por alquileres prolongados.'
+              },
+              {
+                title: '🧑‍✈️ Alquiler con chofer',
+                description: 'Opción de contratar un conductor profesional para tu viaje.'
               }
             ].map((service, index) => (
               <div key={index} style={{
@@ -375,19 +391,6 @@ const Index = () => {
               <p style={{ color: '#cbd5e1' }}>Managua, Nicaragua</p>
             </div>
           </div>
-          <button style={{
-            backgroundColor: '#10b981',
-            color: 'white',
-            padding: '1rem 2rem',
-            border: 'none',
-            borderRadius: '0.5rem',
-            fontSize: '1.125rem',
-            fontWeight: '600',
-            cursor: 'pointer',
-            transition: 'background-color 0.3s'
-          }}>
-            Iniciar Reserva
-          </button>
         </div>
       </section>
 
