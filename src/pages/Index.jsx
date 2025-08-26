@@ -85,18 +85,6 @@ const Index = () => {
               textDecoration: 'none',
               transition: 'color 0.3s'
             }}>Contacto</a>
-            <button style={{
-              backgroundColor: '#3b82f6',
-              color: 'white',
-              padding: '0.5rem 1rem',
-              border: 'none',
-              borderRadius: '0.5rem',
-              cursor: 'pointer',
-              fontWeight: '500',
-              transition: 'background-color 0.3s'
-            }}>
-              Reservar Ahora
-            </button>
           </div>
         </nav>
       </header>
@@ -132,10 +120,10 @@ const Index = () => {
             marginBottom: '2rem',
             color: '#e2e8f0'
           }}>
-            Explora Nicaragua con nuestros vehículos de última generación. 
-            Desde Managua hasta Granada, llevamos la aventura contigo.
+            Explora Nicaragua con nuestra variedad de vehículos. 
+            Desde Managua hasta los departamentos, llevamos la aventura contigo.
           </p>
-          <button style={{
+          <a href="#autos" style={{
             backgroundColor: '#3b82f6',
             color: 'white',
             padding: '1rem 2rem',
@@ -147,8 +135,8 @@ const Index = () => {
             transition: 'all 0.3s',
             boxShadow: '0 10px 25px rgba(59, 130, 246, 0.3)'
           }}>
-            Ver Disponibilidad
-          </button>
+            Ver vehículos
+          </a>
         </div>
       </section>
 
@@ -174,20 +162,12 @@ const Index = () => {
           }}>
             {[
               {
-                title: '🛡️ Seguro Completo',
-                description: 'Cobertura total incluida en todos nuestros vehículos'
+                title: '🛡️ Seguro full cover',
+                description: 'seguro full cover en todos nuestros vehículos'
               },
               {
                 title: '🕒 Disponible 24/7',
                 description: 'Servicio de entrega y recogida las 24 horas del día'
-              },
-              {
-                title: '🗺️ GPS Incluido',
-                description: 'Sistema de navegación GPS en todos los vehículos'
-              },
-              {
-                title: '🚗 Vehículos Nuevos',
-                description: 'Flota renovada con autos modelo 2023-2024'
               }
             ].map((service, index) => (
               <div key={index} style={{
@@ -364,7 +344,7 @@ const Index = () => {
               }}>
                 📞 Teléfono
               </h4>
-              <p style={{ color: '#cbd5e1' }}>+505 2222-3333</p>
+              <p style={{ color: '#cbd5e1' }}>+505 8400-2358</p>
             </div>
             <div style={{
               padding: '1.5rem',
@@ -378,7 +358,7 @@ const Index = () => {
               }}>
                 📧 Email
               </h4>
-              <p style={{ color: '#cbd5e1' }}>info@rentcarnicaragua.com</p>
+              <p style={{ color: '#cbd5e1' }}>montesyalfred0@gmail.com</p>
             </div>
             <div style={{
               padding: '1.5rem',
@@ -412,19 +392,6 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer style={{
-        padding: '2rem',
-        backgroundColor: '#0f172a',
-        borderTop: '1px solid #334155',
-        textAlign: 'center'
-      }}>
-        <p style={{
-          color: '#64748b',
-          fontSize: '0.875rem'
-        }}>
-          © 2024 RentCar Nicaragua. Todos los derechos reservados.
-        </p>
-      </footer>
     </div>
   );
 };
