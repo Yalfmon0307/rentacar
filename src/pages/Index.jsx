@@ -65,9 +65,13 @@ const Index = () => {
           <h1 style={{
             fontSize: '1.5rem',
             fontWeight: 'bold',
-            color: '#3b82f6'
+            color: '#3b82f6',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem'
           }}>
-            🚗 RentCar Nicaragua
+            <img src="/favicon.ico" alt="Logo" style={{ width: '32px', height: '32px', verticalAlign: 'middle' }} />
+            RentCar Nicaragua
           </h1>
           <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
             <a href="#autos" style={{
@@ -226,7 +230,7 @@ const Index = () => {
             marginBottom: '3rem',
             color: '#f1f5f9'
           }}>
-            Nuestra Flota
+            Nuestros Autos
           </h3>
           <div style={{
             display: 'grid',
