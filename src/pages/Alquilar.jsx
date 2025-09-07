@@ -57,7 +57,7 @@ const Alquilar = () => {
       `¡Gracias por elegir RentCar Nicaragua!`;
 
     // TODO: Reemplazar con el número real de WhatsApp
-    const numeroWhatsApp = "50512345678"; // Número de ejemplo
+    const numeroWhatsApp = "50584002358"; // Número de ejemplo
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
   };

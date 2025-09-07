@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import heroImage from '../assets/hero-cars-nicaragua.jpg';
-import carSuv from '../assets/car-suv.jpg';
-import carSedan from '../assets/car-sedan.jpg';
+import heroImage from '../assets/paisaje-hero.jpeg';
+import chevroletn400 from '../assets/chevrolet-n400.webp';
+import kiapicanto from '../assets/kia-picanto.png';
 import carPickup from '../assets/car-pickup.jpg';
 
 const Index = () => {
@@ -11,21 +11,21 @@ const Index = () => {
   const cars = [
     {
       id: 1,
-      name: 'SUV Compacta',
-      image: carSuv,
-      price: 45,
-      features: ['5 Pasajeros', 'Aire Acondicionado', 'Automático', 'GPS'],
+      name: 'Chevrolet N400',
+      image: chevroletn400,
+      price: 85,
+      features: ['8 Pasajeros', 'Aire Acondicionado', 'Mecanico'],
       fuel: 'Gasolina',
-      transmission: 'Automático'
+      transmission: 'Mecánico'
     },
     {
       id: 2,
-      name: 'Sedán Ejecutivo',
-      image: carSedan,
-      price: 65,
-      features: ['5 Pasajeros', 'Aire Acondicionado', 'Automático', 'GPS', 'Asientos de Cuero'],
+      name: 'Kia Picanto',
+      image: kiapicanto,
+      price: 45,
+      features: ['5 Pasajeros', 'Aire Acondicionado', 'Micanico'],
       fuel: 'Gasolina',
-      transmission: 'Automático'
+      transmission: 'Mecánico'
     },
     {
       id: 3,
@@ -95,49 +95,59 @@ const Index = () => {
 
       {/* Hero Section */}
       <section style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroImage})`,
+        backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url(${heroImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: '90vh',
+        minHeight: '90vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        textAlign: 'center'
+        textAlign: 'center',
+        position: 'relative'
       }}>
         <div style={{
-          maxWidth: '800px',
-          padding: '2rem'
+          maxWidth: '700px',
+          width: '100%',
+          margin: '0 auto',
+          padding: '2.5rem 2rem',
+          background: 'none',
+          borderRadius: '0',
+          boxShadow: 'none',
+          backdropFilter: 'none',
+          border: 'none'
         }}>
           <h2 style={{
-            fontSize: '4rem',
+            fontSize: '2.8rem',
             fontWeight: 'bold',
-            marginBottom: '1rem',
-            background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
+            marginBottom: '1.2rem',
+            color: '#f1f5f9',
+            letterSpacing: '1px',
+            textShadow: '0 2px 8px rgba(0,0,0,0.25)'
           }}>
             Alquiler de Autos en Nicaragua
           </h2>
           <p style={{
             fontSize: '1.25rem',
             marginBottom: '2rem',
-            color: '#e2e8f0'
+            color: '#cbd5e1',
+            textShadow: '0 1px 4px rgba(0,0,0,0.18)'
           }}>
-            Explora Nicaragua con nuestra variedad de vehículos. 
+            Explora Nicaragua con nuestra variedad de vehículos.<br />
             Desde Managua hasta los departamentos, llevamos la aventura contigo.
           </p>
           <a href="#autos" style={{
             backgroundColor: '#3b82f6',
             color: 'white',
-            padding: '1rem 2rem',
+            padding: '1rem 2.5rem',
             border: 'none',
-            borderRadius: '0.5rem',
-            fontSize: '1.125rem',
+            borderRadius: '0.75rem',
+            fontSize: '1.15rem',
             fontWeight: '600',
             cursor: 'pointer',
             transition: 'all 0.3s',
-            boxShadow: '0 10px 25px rgba(59, 130, 246, 0.3)'
+            boxShadow: '0 10px 25px rgba(59, 130, 246, 0.3)',
+            textTransform: 'uppercase',
+            letterSpacing: '1px'
           }}>
             Ver vehículos
           </a>
